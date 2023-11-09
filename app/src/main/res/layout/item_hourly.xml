@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/define_dimen_90"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/define_dimen_8"
+    app:cardCornerRadius="@dimen/define_dimen_20"
+    android:elevation="@dimen/define_dimen_3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_hour"
+            android:text="9 am"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_margin="@dimen/define_dimen_8"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/img_weather"
+            android:src="@drawable/sunny"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/define_dimen_45"
+            android:layout_height="@dimen/define_dimen_45"/>
+        <TextView
+            android:id="@+id/txt_temp"
+            android:text="20°"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_margin="@dimen/define_dimen_8"
+            android:textSize="@dimen/text_size_xnormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,7 +1,8 @@
-package com.duydv.vn.weatherapp
+package com.duydv.vn.weatherapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.duydv.vn.weatherapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

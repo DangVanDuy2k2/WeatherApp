@@ -2,11 +2,16 @@
     <string name="app_name">WeatherApp</string>
 
     <string name="mostly_cloudy">Mostly Cloudy</string>
-    <string name="rain">Rain</string>
+    <string name="pressure">Pressure</string>
     <string name="wind_speed">Wind Speed</string>
     <string name="humidity">Humidity</string>
 
     <string name="today">Today</string>
     <string name="next_7_day">Next 7 Day ></string>
+
+    <string name="char_special">°</string>
+    <string name="hPa">hPa</string>
+    <string name="kmh">km/h</string>
+    <string name="percent">%</string>
 
 </resources>

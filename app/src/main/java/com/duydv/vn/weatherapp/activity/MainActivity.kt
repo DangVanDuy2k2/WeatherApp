@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         startUpdatingWeather()
     }
 
-    private fun callAPI(){
-        val callWeatherAPI = InstanceWeather.apiServiceWeather.getData("luanda",Constant.key_API,Constant.units)
+    private fun callAPI(cityName:String){
+        val callWeatherAPI = InstanceWeather.apiServiceWeather.getData(cityName,Constant.key_API,Constant.units)
 
         callWeatherAPI.enqueue(object :Callback<WeatherData>{
             @RequiresApi(Build.VERSION_CODES.O)
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<WeatherData>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"onFailure",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity,"There is no data for the selected city",Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         mActivityMainBinding.rcvWeather.layoutManager = linearLayoutManager
 
 
-        val callWeatherFutureAPI = InstanceWeatherFuture.apiServiceWeatherFuture.getDataWeatherFuture("luanda",Constant.key_API,Constant.units)
+        val callWeatherFutureAPI = InstanceWeatherFuture.apiServiceWeatherFuture.getDataWeatherFuture(cityName,Constant.key_API,Constant.units)
         callWeatherFutureAPI.enqueue(object :Callback<WeatherFuture>{
             override fun onResponse(call: Call<WeatherFuture>, response: Response<WeatherFuture>) {
                 Toast.makeText(this@MainActivity,"onResponse",Toast.LENGTH_SHORT).show()
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<WeatherFuture>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"onFailure",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity,"There is no data for the selected city",Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         handler.post(object : Runnable {
             @RequiresApi(Build.VERSION_CODES.O)
             override fun run() {
-                callAPI()
+                callAPI("hanoi")
                 handler.postDelayed(this, 1000*60*60)
             }
         })

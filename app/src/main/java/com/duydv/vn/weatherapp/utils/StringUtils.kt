@@ -20,8 +20,12 @@ object StringUtils {
         val dateFormat = DateTimeFormatter.ofPattern("E MMM dd, yyyy", Locale.getDefault())
         val formattedDate = dateFormat.format(localDateTime)
 
+        // Định dạng giờ:phút AM/PM
+        val timeFormat = DateTimeFormatter.ofPattern("hh:mm a", Locale.getDefault())
+        val formattedTime = timeFormat.format(localDateTime)
+
         // Kết hợp ngày và giờ thành định dạng cuối cùng
-        return formattedDate
+        return "$formattedDate | $formattedTime"
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
